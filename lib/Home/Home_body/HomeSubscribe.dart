@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 
-class Home_hot extends StatefulWidget {
-  Home_hot({Key? key}) : super(key: key);
+class HomeSubscribe extends StatefulWidget {
+  HomeSubscribe({Key? key}) : super(key: key);
 
   @override
-  _Home_hotState createState() => _Home_hotState();
+  _HomeSubscribeState createState() => _HomeSubscribeState();
 }
 
-class _Home_hotState extends State<Home_hot>
+class _HomeSubscribeState extends State<HomeSubscribe>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -25,7 +25,7 @@ class _Home_hotState extends State<Home_hot>
   }
 
   @override
-  Widget sasas(BuildContext context, int index) {
+  Widget _swiperBuilder(BuildContext context, int index) {
     var images = [
       'https://i0.hdslb.com/bfs/archive/2bcdd16080a1b741fb18ea9e2b2edb942f236389.jpg',
       "https://i0.hdslb.com/bfs/archive/5dea26a8ef8d5410b3e2e9861638bf46eeb70569.jpg",
@@ -48,8 +48,7 @@ class _Home_hotState extends State<Home_hot>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.builder(
+    return ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 1,
         itemBuilder: (BuildContext context, int position) {
@@ -60,36 +59,22 @@ class _Home_hotState extends State<Home_hot>
                 padding: EdgeInsets.all(5.0),
                 alignment: Alignment(0, 0),
                 child: Swiper(
-                    layout: SwiperLayout.DEFAULT,
-                    itemBuilder: _swiperBuilder,
-                    itemCount: 5),
+                  layout: SwiperLayout.DEFAULT,
+                  itemBuilder: _swiperBuilder,
+                  itemCount: 5,
+                  pagination: new SwiperPagination(
+                      alignment: Alignment.bottomRight,
+                      builder: DotSwiperPaginationBuilder(
+                        color: Colors.white,
+                        activeColor: Colors.red,
+                      )),
+                  scrollDirection: Axis.horizontal,
+                  autoplay: true,
+                  onTap: (index) => print('点击了第$index个'),
+                ),
               ),
             ],
           );
-        },
-      ),
-    );
+        });
   }
-}
-
-Widget _swiperBuilder(BuildContext context, int index) {
-  var images = [
-    "https://i0.hdslb.com/bfs/archive/98bd350a5910f63fc4b3119f3122f7a9840ddffa.jpg",
-    "https://i0.hdslb.com/bfs/sycp/creative_img/201903/cf1f947a3a08a29fc8918a7eb37b60da.jpg",
-    "https://i0.hdslb.com/bfs/sycp/creative_img/201903/9e46721bde13c743d63b55d82be1d113.jpg",
-    "https://i0.hdslb.com/bfs/archive/40462bdb70b72ccd29e5799de309f35842151e1b.jpg",
-    "https://i0.hdslb.com/bfs/archive/07c5efa52fdfaa828ad00313fc8053c13fd221f1.jpg",
-  ];
-  return (ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-          child: Container(
-            child: Image.network(
-              images[index],
-              height: 150.0,
-              scale: 0.1,
-              fit: BoxFit.cover,
-            ), // 用Container实现图片圆角的效果
-          ))
-      //          Image.network( images[index],height: 200.0, )
-      );
 }

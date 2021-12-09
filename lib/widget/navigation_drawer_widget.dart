@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_diva2/pages/Home.dart';
+import 'package:project_diva2/Home/Home.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   const NavigationDrawerWidget({Key? key}) : super(key: key);

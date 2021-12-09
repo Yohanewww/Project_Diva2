@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 
-class Home_latest extends StatefulWidget {
-  Home_latest({Key? key}) : super(key: key);
+class HomeLatest extends StatefulWidget {
+  HomeLatest({Key? key}) : super(key: key);
 
   @override
-  _Home_latestState createState() => _Home_latestState();
+  _HomeLatestState createState() => _HomeLatestState();
 }
 
-class _Home_latestState extends State<Home_latest>
+class _HomeLatestState extends State<HomeLatest>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -103,7 +103,6 @@ class _Home_latestState extends State<Home_latest>
           } else {
             return Container(
 //              color: Colors.teal,
-
 //                color: Colors.grey,
               padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
 
