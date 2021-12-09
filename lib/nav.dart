@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 // Pages
-import 'package:project_diva2/pages/Art.dart';
-import 'package:project_diva2/pages/Journey.dart';
-import 'package:project_diva2/pages/Home.dart';
-import 'package:project_diva2/pages/Luckydraw.dart';
-import 'package:project_diva2/pages/Profile.dart';
+import 'package:project_diva2/Art/Art.dart';
+import 'package:project_diva2/Journey/Journey.dart';
+import 'package:project_diva2/Home/Home.dart';
+import 'package:project_diva2/Luckydraw/Luckydraw.dart';
+import 'package:project_diva2/Profile/Profile.dart';
 
 // Pages_AppBar
-import 'package:project_diva2/pages_appbar/Art_appbar.dart';
-import 'package:project_diva2/pages_appbar/Journey_appbar.dart';
-import 'package:project_diva2/pages_appbar/Home_appbar.dart';
-import 'package:project_diva2/pages_appbar/Luckydraw_appbar.dart';
-import 'package:project_diva2/pages_appbar/Profile_appbar.dart';
+import 'package:project_diva2/Art/Art_appbar.dart';
+import 'package:project_diva2/Journey/Journey_appbar.dart';
+import 'package:project_diva2/Home/HomeAppbar.dart';
+import 'package:project_diva2/Luckydraw/Luckydraw_appbar.dart';
+import 'package:project_diva2/Profile/Profile_appbar.dart';
 
 class Nav extends StatefulWidget {
   Nav({Key? key}) : super(key: key);
@@ -34,7 +34,6 @@ class _NavState extends State<Nav> {
   List _listPageAppBar = [
     ArtAppBar(),
     JourneyAppBar(),
-    HomeAppBar(),
     LuckydrawAppBar(),
     ProfileAppBar(),
   ];
@@ -50,10 +49,10 @@ class _NavState extends State<Nav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(55.0),
-        child: this._listPageAppBar[_selectedIndex],
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(55.0),
+      //   child: this._listPageAppBar[_selectedIndex],
+      // ),
       body: this._listPageData[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
