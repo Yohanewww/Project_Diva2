@@ -81,7 +81,7 @@ class _HomeLatestState extends State<HomeLatest>
               children: <Widget>[
                 Container(
                   height: 150.0,
-                  padding: EdgeInsets.all(5.0),
+                  padding: EdgeInsets.only(bottom:5.0),
                   alignment: Alignment(0, 0),
                   child: Swiper(
                     layout: SwiperLayout.DEFAULT,
@@ -116,7 +116,7 @@ class _HomeLatestState extends State<HomeLatest>
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.black54, width: 0.5),
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)), //@TerryKhok
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                             color: Colors.black12,
