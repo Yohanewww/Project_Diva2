@@ -61,7 +61,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             indicatorSize: TabBarIndicatorSize.label,
             indicatorColor: Colors.amber,
             labelColor: Colors.amber,
-            unselectedLabelColor: Colors.black,
+            unselectedLabelColor: Colors.white,
             tabs: <Widget>[
               Container(
                   height: 30,
