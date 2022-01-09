@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
-import 'package:project_diva2/Home/HomeAppbar.dart';
 
 // Home_body
-import 'package:project_diva2/Home/Home_body/HomeLatest.dart';
-import 'package:project_diva2/Home/Home_body/HomeSubscribe.dart';
-import 'package:project_diva2/Home/Home_body/HomeHot.dart';
+import './screens/home_hot_screen.dart';
+import './screens/home_latest_screen.dart';
+import './screens/home_subscribed_screen.dart';
+import './widgets/home_appbar.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);

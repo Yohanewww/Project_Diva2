@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import './nav.dart';
 import './Home/Home.dart';
+import './Home/screens/news_detail_screen.dart';
 
 // import 'package:project_diva2/pages/whatever.dart';
 // import 'package:project_diva2/widget/navigation_drawer_widget.dart';
@@ -15,18 +16,20 @@ class MyApp extends StatelessWidget {
   static final String title = 'Navigation Drawer';
   @override
   AppTheme appTheme = AppTheme(isDark: false)
-    ..accent1 =const Color(0xff1e2038)
-    ..bg1 =  const Color(0xfffff8e7);
+    ..accent1 = const Color(0xff1e2038)
+    ..bg1 = const Color(0xfffff8e7);
   Widget build(BuildContext context) {
     return Provider.value(
       value: appTheme,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'BottomNavigation',
         initialRoute: "/",
         theme: appTheme.themeData,
         routes: {
           //测试用  "new_page": (context) => NewRoute(),
           "/": (context) => Nav(),
+          NewsDetailScreen.routeName: (context) => NewsDetailScreen(),
         },
       ),
     );
