@@ -53,6 +53,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 0,
+        // Appbar 本体
         title: HomeAppBar(),
         // Tab 本体
         bottom: PreferredSize(

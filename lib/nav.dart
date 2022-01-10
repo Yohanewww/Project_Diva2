@@ -10,10 +10,10 @@ import 'package:project_diva2/Profile/Profile.dart';
 // Pages_AppBar
 import 'package:project_diva2/Art/Art_appbar.dart';
 import 'package:project_diva2/Journey/Journey_appbar.dart';
-import 'package:project_diva2/Home/HomeAppbar.dart';
 import 'package:project_diva2/Luckydraw/Luckydraw_appbar.dart';
 import 'package:project_diva2/Profile/Profile_appbar.dart';
 
+// ROUTES
 class Nav extends StatefulWidget {
   Nav({Key? key}) : super(key: key);
 
@@ -22,20 +22,13 @@ class Nav extends StatefulWidget {
 }
 
 class _NavState extends State<Nav> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
   List _listPageData = [
     Art(),
     Journey(),
     Home(),
     Luckydraw(),
     Profile(),
-  ];
-
-  List _listPageAppBar = [
-    ArtAppBar(),
-    JourneyAppBar(),
-    LuckydrawAppBar(),
-    ProfileAppBar(),
   ];
 
   void _onItemTap(int index) {
