@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/navigation_drawer_widget.dart';
+
 class HomeAppBar extends StatefulWidget {
   HomeAppBar({Key? key}) : super(key: key);
 
@@ -16,11 +18,14 @@ class _HomeAppBarState extends State<HomeAppBar> {
         children: <Widget>[
           // Image.asset("assets/images/furo.png"),
           Container(
-            child: ClipOval(
-              child: Image.network(
-                "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-                width: 35.0,
-                height: 35.0,
+            child: IconButton(
+              onPressed: ()=> Scaffold.of(context).openDrawer(),
+              icon: ClipOval(
+                child: Image.network(
+                  "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+                  width: 35.0,
+                  height: 35.0,
+                ),
               ),
             ),
           ),
