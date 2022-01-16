@@ -45,6 +45,7 @@ class AppTheme {
   AppTheme({required this.isDark});
 
   ThemeData get themeData {
+    TextTheme:const TextTheme(headline6: TextStyle(fontFamily: 'ProximaNova'));
     /// Create a TextTheme and ColorScheme, that we can use to generate ThemeData
     TextTheme txtTheme =
         (isDark ? ThemeData.dark() : ThemeData.light()).textTheme;
