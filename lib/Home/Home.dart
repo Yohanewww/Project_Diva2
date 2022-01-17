@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:project_diva2/widget/navigation_drawer_widget.dart';
 
 // Home_body
 import './screens/home_hot_screen.dart';
@@ -51,10 +52,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     ];
 
     return Scaffold(
+      drawer: Drawer(
+        child: NavigationDrawerWidget(),
+      ),
       appBar: AppBar(
         titleSpacing: 0,
         // Appbar 本体
         title: HomeAppBar(),
+
         // Tab 本体
         bottom: PreferredSize(
           preferredSize: Size(double.infinity, 30),

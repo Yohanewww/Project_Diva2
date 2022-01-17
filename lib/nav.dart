@@ -7,13 +7,6 @@ import 'package:project_diva2/Home/home.dart';
 import 'package:project_diva2/Luckydraw/Luckydraw.dart';
 import 'package:project_diva2/Profile/Profile.dart';
 
-// Pages_AppBar
-import 'package:project_diva2/Art/Art_appbar.dart';
-import 'package:project_diva2/Journey/Journey_appbar.dart';
-import './Home/widgets/home_appbar.dart';
-import 'package:project_diva2/Luckydraw/Luckydraw_appbar.dart';
-import 'package:project_diva2/Profile/Profile_appbar.dart';
-
 // ROUTES
 class Nav extends StatefulWidget {
   Nav({Key? key}) : super(key: key);
