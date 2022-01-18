@@ -6,6 +6,7 @@ import './screens/home_hot_screen.dart';
 import './screens/home_latest_screen.dart';
 import './screens/home_subscribed_screen.dart';
 import './widgets/home_appbar.dart';
+import '../widget/navigation_drawer_widget.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -83,6 +84,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           ),
         ),
       ),
+      drawer: NavigationDrawerWidget(),
       body: bodys[_currentIndex],
     );
   }
