@@ -6,11 +6,9 @@ import 'package:project_diva2/widget/navigation_drawer_widget.dart';
 import './screens/home_hot_screen.dart';
 import './screens/home_latest_screen.dart';
 import './screens/home_subscribed_screen.dart';
-<<<<<<< HEAD
-import './widgets/home_appbar.dart';
 import '../widget/navigation_drawer_widget.dart';
-=======
->>>>>>> a4538caea0ac2e3ba39607f7bf4d1717d11a57ce
+
+
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -142,7 +140,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           ),
         ),
       ),
-      drawer: NavigationDrawerWidget(),
       body: bodys[_currentIndex],
     );
   }
