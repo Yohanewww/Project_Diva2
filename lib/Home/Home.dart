@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:project_diva2/widget/navigation_drawer_widget.dart';
 
 // Home_body
 import './screens/home_hot_screen.dart';
 import './screens/home_latest_screen.dart';
 import './screens/home_subscribed_screen.dart';
+<<<<<<< HEAD
 import './widgets/home_appbar.dart';
 import '../widget/navigation_drawer_widget.dart';
+=======
+>>>>>>> a4538caea0ac2e3ba39607f7bf4d1717d11a57ce
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -35,8 +39,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   // sub_appbar
   @override
   Widget build(BuildContext context) {
-    var appbarbottomtabs = [];
-
+    GlobalKey<ScaffoldState> _Drawerkey = GlobalKey();
     // sub_appbar 入口
     var homebodys = [
       HomeLatest(),
@@ -52,9 +55,64 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     ];
 
     return Scaffold(
+      key: _Drawerkey,
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        titleSpacing: 0,
-        title: HomeAppBar(),
+        leading: Builder(builder: (BuildContext context) {
+          return TextButton(
+              onPressed: () {
+                _Drawerkey.currentState!.openDrawer();
+              },
+              child: ClipOval(
+                child: Image.network(
+                  "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+                  width: 35.0,
+                  height: 35.0,
+                ),
+              ));
+        }),
+        primary: true,
+        title: Row(
+          children: <Widget>[
+            // Image.asset("assets/images/furo.png"),
+            // new GestureDetector(
+            //   onTap: () {},
+            //   child: ClipOval(
+            //     child: Image.network(
+            //       "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+            //       width: 35.0,
+            //       height: 35.0,
+            //     ),
+            //   ),
+            // ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(left: 0.0, right: 10.0),
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(left: 10.0),
+                width: 200.0,
+                height: 30.0,
+                child: Icon(Icons.search, color: Colors.white54),
+                decoration: BoxDecoration(
+                    color: Colors.white30,
+                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              ),
+            ),
+            Container(
+              width: 40,
+              child: Image.asset(
+                "assets/images/qrscan.png",
+                width: 25.0,
+                height: 25.0,
+                color: Colors.white70,
+              ),
+            )
+          ],
+        ),
+        // titleSpacing: 0,
+        // // Appbar 本体
+        // title: HomeAppBar(),
+
         // Tab 本体
         bottom: PreferredSize(
           preferredSize: Size(double.infinity, 30),
