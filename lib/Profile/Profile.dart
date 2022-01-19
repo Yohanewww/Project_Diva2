@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+  final mediaQuery = MediaQuery.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
@@ -18,8 +19,12 @@ class Profile extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Image.network(
-                      'https://cdn.discordapp.com/attachments/888315437769699328/930858997840486410/849291.jpg'),
+                  Container(
+                    width: mediaQuery.size.width,
+                    height: mediaQuery.size.width * (6/16),
+                    child: Image.network(
+                        'https://cdn.discordapp.com/attachments/888315437769699328/930858997840486410/849291.jpg'),
+                  ),
                   Container(
                     width: double.infinity,
                     height: 150,

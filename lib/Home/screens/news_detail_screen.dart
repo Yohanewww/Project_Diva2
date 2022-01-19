@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_diva2/fonts.dart';
 
 import '../providers/news_items.dart';
+import '../../fonts.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   static const routeName = '/news-detail-screen';
@@ -40,11 +42,20 @@ class NewsDetailScreen extends StatelessWidget {
               ),
             ),
             Container(
-              height: 400,
+              height: 200,
               child: Center(
                 child: Text(
-                  'Content',
+                  'Content1',
                   style: TextStyle(fontSize: 40),
+                ),
+              ),
+            ),
+            Container(
+              height: 200,
+              child: Center(
+                child: Text(
+                  'Content1',
+                  style: TextStyles.body,
                 ),
               ),
             ),
