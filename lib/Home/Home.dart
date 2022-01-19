@@ -37,7 +37,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   // sub_appbar
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> _Drawerkey = GlobalKey();
     // sub_appbar 入口
     var homebodys = [
       HomeLatest(),
@@ -53,72 +52,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     ];
 
     return Scaffold(
-      key: _Drawerkey,
-      drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        leading: Builder(builder: (BuildContext context) {
-          return TextButton(
-              onPressed: () {
-                _Drawerkey.currentState!.openDrawer();
-              },
-              child: ClipOval(
-                child: Image.network(
-                  "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-                  width: 35.0,
-                  height: 35.0,
-                ),
-              ));
-        }),
-        primary: true,
-        title: Row(
-          children: <Widget>[
-            // Image.asset("assets/images/furo.png"),
-            // new GestureDetector(
-            //   onTap: () {},
-            //   child: ClipOval(
-            //     child: Image.network(
-            //       "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-            //       width: 35.0,
-            //       height: 35.0,
-            //     ),
-            //   ),
-            // ),
-            Expanded(
-              child: Container(
-                margin: EdgeInsets.only(left: 0.0, right: 10.0),
-                alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 10.0),
-                width: 200.0,
-                height: 30.0,
-                child: Icon(Icons.search, color: Colors.white54),
-                decoration: BoxDecoration(
-                    color: Colors.white30,
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-              ),
-            ),
-            Container(
-              width: 40,
-              child: Image.asset(
-                "assets/images/qrscan.png",
-                width: 25.0,
-                height: 25.0,
-                color: Colors.white70,
-              ),
-            )
-          ],
-        ),
-        // titleSpacing: 0,
-        // // Appbar 本体
-        // title: HomeAppBar(),
-
-        // Tab 本体
-        bottom: PreferredSize(
-          preferredSize: Size(double.infinity, 30),
-          child: TabBar(
+      appBar:  TabBar(
             indicatorSize: TabBarIndicatorSize.label,
-            indicatorColor: Colors.amber,
-            labelColor: Colors.amber,
-            unselectedLabelColor: Colors.white,
+            indicatorColor: Colors.black,
+            labelColor: Colors.black,
+            unselectedLabelColor: Colors.grey[700],
             tabs: <Widget>[
               Container(
                   height: 30,
@@ -138,8 +76,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ],
             controller: _tabController,
           ),
-        ),
-      ),
+ 
       body: bodys[_currentIndex],
     );
   }
