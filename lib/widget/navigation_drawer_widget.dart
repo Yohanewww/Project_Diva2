@@ -8,7 +8,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final name = 'Hako';
     final email = 'hakonojigen@abc.com';
-
+  
     return Drawer(
       child: Container(
         color: Color.fromRGBO(50, 75, 205, 1),

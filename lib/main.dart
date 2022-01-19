@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './nav.dart';
+import 'main_screen.dart';
 import './Home/Home.dart';
 import './Home/screens/news_detail_screen.dart';
 
