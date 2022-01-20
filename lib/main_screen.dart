@@ -37,16 +37,16 @@ class _NavState extends State<Nav> {
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> _Drawerkey = GlobalKey();
+    GlobalKey<ScaffoldState> _drawerkey = GlobalKey();
     return Scaffold(
-      key: _Drawerkey,
+      key: _drawerkey,
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
           
         leading: Builder(builder: (BuildContext context) {
             return TextButton(
                 onPressed: () {
-                  _Drawerkey.currentState!.openDrawer();
+                  _drawerkey.currentState!.openDrawer();
                 },
                 child: ClipOval(
                   child: Image.network(

@@ -74,6 +74,9 @@ flutter:
         - asset: assets/fonts/ProximaNova-Regular.otf
         - asset: assets/fonts/ProximaNova-Bold.otf
           weight: 700
+    - family:  CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
 
   #   - family: Trajan Pro
   #     fonts:
