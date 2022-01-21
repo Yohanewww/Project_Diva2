@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
-import 'package:project_diva2/widget/navigation_drawer_widget.dart';
 
 // Home_body
 import './screens/home_hot_screen.dart';
 import './screens/home_latest_screen.dart';
 import './screens/home_subscribed_screen.dart';
-import '../widget/navigation_drawer_widget.dart';
-
-
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);

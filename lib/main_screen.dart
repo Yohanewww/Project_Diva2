@@ -7,7 +7,7 @@ import 'package:project_diva2/Home/home.dart';
 import 'package:project_diva2/Luckydraw/Luckydraw.dart';
 import 'package:project_diva2/Profile/Profile.dart';
 
-import './widget/navigation_drawer_widget.dart';
+import 'widget/sidebar_drawer.dart';
 
 // ROUTES
 class Nav extends StatefulWidget {
@@ -37,27 +37,24 @@ class _NavState extends State<Nav> {
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> _Drawerkey = GlobalKey();
+    GlobalKey<ScaffoldState> _drawerkey = GlobalKey();
     return Scaffold(
-      key: _Drawerkey,
-      drawer: NavigationDrawerWidget(),
+      key: _drawerkey,
+      drawer: SidebarDrawerWidget(),
       appBar: AppBar(
           
         leading: Builder(builder: (BuildContext context) {
-            return Row(
-              // padding: EdgeInsets.only(left: 10),
-              children: [SizedBox(width: 10), TextButton(
-                  onPressed: () {
-                    _Drawerkey.currentState!.openDrawer();
-                  },
-                  child: ClipOval(
-                    child: Image.network(
-                      "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-                      width: 35.0,
-                      height: 35.0,
-                    ),
-                  )),
-              ],);
+            return TextButton(
+                onPressed: () {
+                  _drawerkey.currentState!.openDrawer();
+                },
+                child: ClipOval(
+                  child: Image.network(
+                    "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+                    width: 35.0,
+                    height: 35.0,
+                  ),
+                ));
           }),
           primary: true,
           title: Row(
