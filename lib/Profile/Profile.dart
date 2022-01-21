@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-  final mediaQuery = MediaQuery.of(context);
+    final mediaQuery = MediaQuery.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile'),
-        centerTitle: false,
-        // backgroundColor:,
-      ),
+      // appBar: AppBar(
+      //   title: Text('Profile'),
+      //   centerTitle: false,
+      // ),
       body: Column(
         children: [
           Stack(
@@ -21,9 +19,12 @@ class Profile extends StatelessWidget {
                 children: [
                   Container(
                     width: mediaQuery.size.width,
-                    height: mediaQuery.size.width * (6/16),
-                    child: Image.network(
-                        'https://cdn.discordapp.com/attachments/888315437769699328/930858997840486410/849291.jpg'),
+                    height: mediaQuery.size.width * (6 / 16),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Image.network(
+                          'https://cdn.discordapp.com/attachments/888315437769699328/930858997840486410/849291.jpg'),
+                    ),
                   ),
                   Container(
                     width: double.infinity,
@@ -32,13 +33,38 @@ class Profile extends StatelessWidget {
                     child: Column(
                       children: [
                         Align(
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.topLeft,
                         ),
                         SizedBox(
-                          height: 50,
+                          height: 75,
                         ),
-                        Text('消息通知'),
-                        Text('游览历史'),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: mediaQuery.size.width * 25 / 100,
+                            vertical: 5,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.mail),
+                              SizedBox(width: 10),
+                              Text('消息通知'),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: mediaQuery.size.width * 25 / 100,
+                            vertical: 2,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.access_time),
+                              SizedBox(width: 10),
+                              Text('游览历史'),
+                            ],
+                          ),
+                        ),
+                        // SizedBox(height:15)
                       ],
                     ),
                   ),
@@ -64,11 +90,15 @@ class Profile extends StatelessWidget {
                     SizedBox(
                       width: 30,
                     ),
-                    Column(
-                      children: [
-                        Text('Hakuya Furo'),
-                        Text('Id:1234567890'),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(left:10),
+                      child: Column(    
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Hakuya Furo000000'),
+                          Text('Id:12345678'),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -76,17 +106,68 @@ class Profile extends StatelessWidget {
             ],
           ),
           SizedBox(height: 30),
-          Container(
-            color: Colors.white,
-            height: 200,
-            width: double.infinity,
-            child: Column(
-              children: [
-                Text('Bug'),
-                Text('问卷'),
-                Text('客服'),
-                Text('更新'),
-              ],
+          Card(
+            child: Container(
+              color: Colors.white,
+              height: 200,
+              width: double.infinity,
+              child: Column(
+                children: [
+                  SizedBox(height:30),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mediaQuery.size.width * 25 / 100,
+                      vertical: 2,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.bug_report_rounded),
+                        SizedBox(width: 10),
+                        Text('Bug'),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mediaQuery.size.width * 25 / 100,
+                      vertical: 2,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.list_alt_rounded),
+                        SizedBox(width: 10),
+                        Text('问卷'),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mediaQuery.size.width * 25 / 100,
+                      vertical: 2,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.headset_mic_rounded),
+                        SizedBox(width: 10),
+                        Text('客服'),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: mediaQuery.size.width * 25 / 100,
+                      vertical: 2,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.system_update_alt_rounded),
+                        SizedBox(width: 10),
+                        Text('更新'),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],

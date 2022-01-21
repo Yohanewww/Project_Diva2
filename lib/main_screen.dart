@@ -44,17 +44,20 @@ class _NavState extends State<Nav> {
       appBar: AppBar(
           
         leading: Builder(builder: (BuildContext context) {
-            return TextButton(
-                onPressed: () {
-                  _Drawerkey.currentState!.openDrawer();
-                },
-                child: ClipOval(
-                  child: Image.network(
-                    "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-                    width: 35.0,
-                    height: 35.0,
-                  ),
-                ));
+            return Row(
+              // padding: EdgeInsets.only(left: 10),
+              children: [SizedBox(width: 10), TextButton(
+                  onPressed: () {
+                    _Drawerkey.currentState!.openDrawer();
+                  },
+                  child: ClipOval(
+                    child: Image.network(
+                      "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+                      width: 35.0,
+                      height: 35.0,
+                    ),
+                  )),
+              ],);
           }),
           primary: true,
           title: Row(
@@ -74,7 +77,7 @@ class _NavState extends State<Nav> {
                 child: Container(
                   margin: EdgeInsets.only(left: 0.0, right: 10.0),
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 10.0),
+                  padding: EdgeInsets.only(left: 10),
                   width: 200.0,
                   height: 30.0,
                   child: Icon(Icons.search, color: Colors.white54),
