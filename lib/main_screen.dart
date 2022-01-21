@@ -7,7 +7,7 @@ import 'package:project_diva2/Home/home.dart';
 import 'package:project_diva2/Luckydraw/Luckydraw.dart';
 import 'package:project_diva2/Profile/Profile.dart';
 
-import './widget/navigation_drawer_widget.dart';
+import 'widget/sidebar_drawer.dart';
 
 // ROUTES
 class Nav extends StatefulWidget {
@@ -40,7 +40,7 @@ class _NavState extends State<Nav> {
     GlobalKey<ScaffoldState> _drawerkey = GlobalKey();
     return Scaffold(
       key: _drawerkey,
-      drawer: NavigationDrawerWidget(),
+      drawer: SidebarDrawerWidget(),
       appBar: AppBar(
           
         leading: Builder(builder: (BuildContext context) {
