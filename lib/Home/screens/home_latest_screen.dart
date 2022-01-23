@@ -4,6 +4,9 @@ import 'package:provider/provider.dart';
 
 import './news_detail_screen.dart';
 import '../providers/news_items.dart';
+import '../providers/single_news_items.dart';
+import '../providers/news_items.dart';
+
 
 class HomeLatest extends StatefulWidget {
   HomeLatest({Key? key}) : super(key: key);
@@ -37,6 +40,7 @@ class _HomeLatestState extends State<HomeLatest>
       "https://i0.hdslb.com/bfs/archive/1d5cd0e2ac820f68db273f5d53168a429fa83182.jpg",
     ];
 
+
     return (Container(
       child: ClipRRect(
         child: Image.network(
@@ -51,31 +55,7 @@ class _HomeLatestState extends State<HomeLatest>
 
   @override
   Widget build(BuildContext context) {
-    List<SingleNewsItem> saaaa = [
-      SingleNewsItem(thumbnailImageUrl: 'https://media.discordapp.net/attachments/844483893683814423/896050391978999889/info2.jpg?width=1202&height=676' ,),
-      SingleNewsItem(thumbnailImageUrl: 'https://i1.hdslb.com/bfs/archive/416a3ee705b2ac544ff76f60af52f6655bf6eb42.jpg@320w_200h.jpg'),
-      // 'https://i0.hdslb.com/bfs/archive/00573099a2c86569ea68380bb44ccf91b0ca8619.png@320w_200h.png',
-      // 'https://i2.hdslb.com/bfs/archive/c781bb917d148a18dc0981ee8a8abdead75fb95f.jpg@320w_200h.jpg',
-      // 'https://i0.hdslb.com/bfs/archive/515eb7f4ca826304eeadbd51e124e27ecbfd1e17.jpg@320w_200h.jpg',
-      // 'https://i1.hdslb.com/bfs/archive/e22ff91e9363d48f03d86ed00185bcda10181dee.jpg@320w_200h.jpg',
-      // 'https://i0.hdslb.com/bfs/archive/9eca86255ef1838886b4b5f1c0662d3e9f634410.jpg@320w_200h.jpg',
-      // 'https://i2.hdslb.com/bfs/archive/be9686d5bb15d4ce330f73ee6acd0303a9170b5b.jpg@320w_200h.jpg',
-      // 'https://i2.hdslb.com/bfs/archive/bdd67d993c31ac4a9bc5054367229bad40c4000a.jpg@320w_200h.jpg',
-      // 'https://i2.hdslb.com/bfs/archive/a90dd608483742898f02e45ec039097446cdcd56.jpg@320w_200h.jpg'
-    ];
-
-    var videoContents = [
-      '「世界頂尖的暗殺者轉生為異世界貴族」',
-      '六千英镑就能买到劳斯莱.',
-      '【章鱼哥哥&海绵宝宝】',
-      '元首对蔡徐坤黑粉的愤怒',
-      '6110分继续刚',
-      '英雄联盟LEC赛区-春季赛',
-      'apex emmm',
-      '与仙争鸡',
-      '天桥地下的唱见',
-      '今天的李先生疲惫了',
-    ];
+    final news_data = Provider.of<NewsItems>(context);
     return ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 2,
@@ -119,7 +99,7 @@ class _HomeLatestState extends State<HomeLatest>
                     onTap: () {
                       Navigator.of(context).pushNamed(
                         NewsDetailScreen.routeName,
-                        arguments: news.id,
+                        arguments:'n1',
                       );
                     },
                     child: Container(
@@ -138,54 +118,54 @@ class _HomeLatestState extends State<HomeLatest>
                           ]),
                       child: Column(
                         children: <Widget>[
-                          Stack(
-                            children: <Widget>[
-                              ClipRRect(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(5.0),
-                                    topRight: Radius.circular(5.0)),
-                                child: new Image.network(
-                                  saaaa[index].thumbnailImageUrl,
-                                  width: 420,
-                                  height: 320,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Positioned(
-                                  bottom: 5,
-                                  left: 3.0,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.remove_red_eye_outlined,
-                                        size: 20.0,
-                                        color: Colors.white,
-                                      ),
-                                      Text(
-                                        '1630  ',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 13.0),
-                                      ),
-                                      Icon(
-                                        Icons.thumb_up_off_alt_outlined,
-                                        size: 20.0,
-                                        color: Colors.white,
-                                      ),
-                                      Text(
-                                        ' 96',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 13.0),
-                                      ),
-                                    ],
-                                  )),
-                            ],
-                          ),
+                          // Stack(
+                          //   children: <Widget>[
+                          //     ClipRRect(
+                          //       borderRadius: BorderRadius.only(
+                          //           topLeft: Radius.circular(5.0),
+                          //           topRight: Radius.circular(5.0)),
+                          //       child: new Image.network(
+                          //         news_data[index].thumbnailImageUrl,
+                          //         width: 420,
+                          //         height: 320,
+                          //         fit: BoxFit.cover,
+                          //       ),
+                          //     ),
+                          //     Positioned(
+                          //         bottom: 5,
+                          //         left: 3.0,
+                          //         child: Row(
+                          //           mainAxisAlignment:
+                          //               MainAxisAlignment.spaceEvenly,
+                          //           crossAxisAlignment:
+                          //               CrossAxisAlignment.center,
+                          //           children: <Widget>[
+                          //             Icon(
+                          //               Icons.remove_red_eye_outlined,
+                          //               size: 20.0,
+                          //               color: Colors.white,
+                          //             ),
+                          //             Text(
+                          //               '1630  ',
+                          //               style: TextStyle(
+                          //                   color: Colors.white,
+                          //                   fontSize: 13.0),
+                          //             ),
+                          //             Icon(
+                          //               Icons.thumb_up_off_alt_outlined,
+                          //               size: 20.0,
+                          //               color: Colors.white,
+                          //             ),
+                          //             Text(
+                          //               ' 96',
+                          //               style: TextStyle(
+                          //                   color: Colors.white,
+                          //                   fontSize: 13.0),
+                          //             ),
+                          //           ],
+                          //         )),
+                          //   ],
+                          // ),
                           Container(
                             alignment: Alignment.centerLeft,
                             height: 50.0,
@@ -194,12 +174,12 @@ class _HomeLatestState extends State<HomeLatest>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(
-                                  videoContents[index],
-                                  style: TextStyle(
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.normal),
-                                ),
+                                // Text(
+                                //   videoContents[index],
+                                //   style: TextStyle(
+                                //       fontSize: 14.0,
+                                //       fontWeight: FontWeight.normal),
+                                // ),
                                 Container(
                                   //                                    color: Colors.yellow,
                                   child: Text(
