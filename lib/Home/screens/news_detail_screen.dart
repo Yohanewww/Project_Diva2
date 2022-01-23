@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:project_diva2/fonts.dart';
+import 'package:provider/provider.dart';
 
-import '../providers/news_items.dart';
 import '../../fonts.dart';
+import '../providers/news_items.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   static const routeName = '/news-detail-screen';
+
   @override
   Widget build(BuildContext context) {
+    final newsId = ModalRoute.of(context)?.settings.arguments as String;
+    final loadedNews =
+        Provider.of<NewsItems>(context, listen: false).findById(newsId);
     return Scaffold(
       appBar: AppBar(
-        title: Text('News Title'),
+        title: Text(loadedNews.title),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -18,43 +22,35 @@ class NewsDetailScreen extends StatelessWidget {
             Container(
               height: 221,
               child: Image.network(
-                  'https://media.discordapp.net/attachments/844483893683814423/896050391978999889/info2.jpg?width=1202&height=676'),
+                  loadedNews.thumbnailImageUrl),
             ),
+            Text(loadedNews.title,style: TextStyles.title),
             Container(
               height: 30,
               child: Row(
                 children: [
-                  Text(DateTime.now().toString()),
+                  Text(loadedNews.uploadTime.toString()),
                   Expanded(child: Container()),
                   Row(
                     children: [
                       Icon(Icons.remove_red_eye),
-                      Text('54,224'),
+                      Text(loadedNews.views.toString()),
                     ],
                   ),
                   Row(
                     children: [
                       Icon(Icons.thumb_up),
-                      Text('54,224'),
+                      Text(loadedNews.likes.toString()),
                     ],
                   ),
                 ],
               ),
             ),
             Container(
-              height: 200,
+              height: 400,
               child: Center(
                 child: Text(
-                  'Content1',
-                  style: TextStyle(fontSize: 40),
-                ),
-              ),
-            ),
-            Container(
-              height: 200,
-              child: Center(
-                child: Text(
-                  'Content1',
+                  loadedNews.description,
                   style: TextStyles.body,
                 ),
               ),
