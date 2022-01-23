@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:provider/provider.dart';
 
 import './news_detail_screen.dart';
 import '../providers/news_items.dart';
@@ -115,8 +116,12 @@ class _HomeLatestState extends State<HomeLatest>
                 physics: new NeverScrollableScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
-                    onTap: () => Navigator.of(context)
-                        .pushNamed(NewsDetailScreen.routeName),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        NewsDetailScreen.routeName,
+                        arguments: news.id,
+                      );
+                    },
                     child: Container(
                       margin: EdgeInsets.symmetric(vertical: 5),
                       alignment: Alignment.center,

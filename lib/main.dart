@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_diva2/Home/providers/news_items.dart';
 import 'package:provider/provider.dart';
 
 import 'main_screen.dart';
@@ -18,8 +19,14 @@ class MyApp extends StatelessWidget {
     ..accent1 = const Color(0xff1e2038)
     ..bg1 = const Color(0xfffff8e7);
   Widget build(BuildContext context) {
-    return Provider.value(
-      value: appTheme,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create:(_)=> NewsItems()),
+        Provider.value(value: appTheme),
+      ],
+
+      // Provider.value(
+      //   value: appTheme,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'BottomNavigation',
@@ -44,7 +51,9 @@ class AppTheme {
   AppTheme({required this.isDark});
 
   ThemeData get themeData {
-    TextTheme:const TextTheme(headline6: TextStyle(fontFamily: 'ProximaNova'));
+    TextTheme:
+    const TextTheme(headline6: TextStyle(fontFamily: 'ProximaNova'));
+
     /// Create a TextTheme and ColorScheme, that we can use to generate ThemeData
     TextTheme txtTheme =
         (isDark ? ThemeData.dark() : ThemeData.light()).textTheme;
@@ -66,7 +75,7 @@ class AppTheme {
         error: Colors.red.shade400);
 
     /// Now that we have ColorScheme and TextTheme, we can create the ThemeData
-    var t = ThemeData.from(textTheme: txtTheme, colorScheme: colorScheme)
+    var theme = ThemeData.from(textTheme: txtTheme, colorScheme: colorScheme)
         // We can also add on some extra properties that ColorScheme seems to miss
         .copyWith(
             buttonColor: accent1,
@@ -75,6 +84,6 @@ class AppTheme {
             toggleableActiveColor: accent1);
 
     /// Return the themeData which MaterialApp can now use
-    return t;
+    return theme;
   }
 }
