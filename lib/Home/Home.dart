@@ -8,7 +8,7 @@ import './screens/home_subscribed_screen.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
-
+  
   @override
   _HomeState createState() => _HomeState();
 }
@@ -33,6 +33,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   // sub_appbar
   @override
   Widget build(BuildContext context) {
+
     // sub_appbar 入口
     var homebodys = [
       HomeLatest(),

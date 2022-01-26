@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../providers/news_items.dart';
+import 'news.dart';
 import 'package:http/http.dart' as http;
 
 

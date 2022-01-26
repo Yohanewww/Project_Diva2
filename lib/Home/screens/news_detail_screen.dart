@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../fonts.dart';
-import '../providers/news_items.dart';
+import '../providers/news.dart';
 
 class NewsDetailScreen extends StatelessWidget {
   static const routeName = '/news-detail-screen';
@@ -10,8 +10,7 @@ class NewsDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final newsId = ModalRoute.of(context)?.settings.arguments as String;
-    final loadedNews =
-        Provider.of<NewsItems>(context, listen: false).findById(newsId);
+    final loadedNews = Provider.of<News>(context, listen: false).findById(newsId);
     return Scaffold(
       appBar: AppBar(
         title: Text(loadedNews.title),
@@ -29,7 +28,7 @@ class NewsDetailScreen extends StatelessWidget {
               height: 30,
               child: Row(
                 children: [
-                  Text(loadedNews.uploadTime.toString()),
+                  // Text(loadedNews.uploadTime.toString()),
                   Expanded(child: Container()),
                   Row(
                     children: [

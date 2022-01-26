@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_diva2/Home/providers/news_items.dart';
+import 'package:project_diva2/Home/providers/news.dart';
 import 'package:provider/provider.dart';
 
 import 'main_screen.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create:(_)=> NewsItems()),
+        ChangeNotifierProvider(create:(_)=> News()),
         Provider.value(value: appTheme),
       ],
 
