@@ -16,7 +16,7 @@ class NewsItems extends StatelessWidget {
     String _description = single_news.description;
     List<String> _tags = single_news.tags;
     //  tag 还没设置
-
+    
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GestureDetector(

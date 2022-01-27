@@ -144,6 +144,16 @@ class News with ChangeNotifier {
           views: newsData['views'],
           tags: List.from(newsData['tags']),
           thumbnailImageUrl: newsData['thumbnailImageUrl'],
+          article_1: newsData['article_1'],
+          img_1: newsData['img_1'],
+          article_2: newsData['article_2'],
+          img_2: newsData['img_2'],
+          article_3: newsData['article_3'],
+          img_3: newsData['img_3'],
+          article_4: newsData['article_4'],
+          img_4: newsData['img_4'],
+          article_5: newsData['article_5'],
+          img_5: newsData['img_5'],
         ));
       });
       _news = loadedNews;

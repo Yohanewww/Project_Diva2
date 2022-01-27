@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_diva2/Home/providers/news.dart';
 import 'package:provider/provider.dart';
+import './Main_providers/auth.dart';
 
 import 'main_screen.dart';
 import './Home/screens/news_detail_screen.dart';
 
-// import 'package:project_diva2/pages/whatever.dart';
-// import 'package:project_diva2/widget/navigation_drawer_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider.value(
+          value: Auth(),
+        ),
         ChangeNotifierProvider(create:(_)=> News()),
         Provider.value(value: appTheme),
       ],

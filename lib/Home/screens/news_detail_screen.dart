@@ -23,7 +23,9 @@ class NewsDetailScreen extends StatelessWidget {
               child: Image.network(
                   loadedNews.thumbnailImageUrl),
             ),
-            Text(loadedNews.title,style: TextStyles.title),
+            Text(
+              loadedNews.title,
+              style: TextStyles.title),
             Container(
               height: 30,
               child: Row(
@@ -54,6 +56,11 @@ class NewsDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              child: Text(loadedNews.article_1 ?? ''),
+            ),
+
+
           ],
         ),
       ),
