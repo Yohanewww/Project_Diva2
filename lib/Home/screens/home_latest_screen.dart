@@ -71,7 +71,7 @@ class _HomeLatestState extends State<HomeLatest>
   Widget build(BuildContext context) {
     final newsData = Provider.of<News>(context);
     final news = newsData.getnews;
-    print(news.length);
+    // print(news.length);
     return ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: 2,

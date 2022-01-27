@@ -8,7 +8,7 @@ class SingleNewsItem with ChangeNotifier{
   final int likes;
   final int views;
   final String thumbnailImageUrl;
-  // final List<String> tags;
+  final List<String> tags;
 
   SingleNewsItem({
     required this.id,
@@ -18,6 +18,6 @@ class SingleNewsItem with ChangeNotifier{
     required this.likes,
     required this.views,
     required this.thumbnailImageUrl,
-    // required this.tags,
+    required this.tags,
   });
 }

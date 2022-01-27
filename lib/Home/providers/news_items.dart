@@ -14,8 +14,9 @@ class NewsItems extends StatelessWidget {
     String _views = single_news.views.toString();
     String _likes = single_news.likes.toString();
     String _description = single_news.description;
-    // final newsData = Provider.of<News>(context);
-    // final news = newsData.newsItems;
+    List<String> _tags = single_news.tags;
+    //  tag 还没设置
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GestureDetector(
@@ -113,6 +114,7 @@ class NewsItems extends StatelessWidget {
                                 fontWeight: FontWeight.normal),
                           ),
                         ),
+         
                       ],
                     ),
                   )

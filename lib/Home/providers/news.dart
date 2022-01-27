@@ -127,7 +127,7 @@ class News with ChangeNotifier {
         'https://project-diva-df56a-default-rtdb.asia-southeast1.firebasedatabase.app/News.json');
     try {
       final response = await http.get(url);
-      print(_news);
+  
       final extractedData = json.decode(response.body) as Map<String, dynamic> ;
       // print(json.decode(response.body));
       if (extractedData == null) {
@@ -142,7 +142,7 @@ class News with ChangeNotifier {
           description: newsData['description'],
           likes: newsData['likes'],
           views: newsData['views'],
-          // tags: newsData['tags'],
+          tags: List.from(newsData['tags']),
           thumbnailImageUrl: newsData['thumbnailImageUrl'],
         ));
       });
