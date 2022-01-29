@@ -156,15 +156,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
-<<<<<<< HEAD
-  markdown:
-    dependency: transitive
-    description:
-      name: markdown
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.1"
-=======
   js:
     dependency: transitive
     description:
@@ -172,7 +163,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
->>>>>>> d00e8aeecf5b29df0b314ca430e9008000735369
+  markdown:
+    dependency: transitive
+    description:
+      name: markdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.1"
   matcher:
     dependency: transitive
     description:
@@ -264,7 +261,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-<<<<<<< HEAD
   process:
     dependency: transitive
     description:
@@ -272,8 +268,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-=======
->>>>>>> d00e8aeecf5b29df0b314ca430e9008000735369
   provider:
     dependency: "direct main"
     description:
