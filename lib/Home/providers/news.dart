@@ -133,6 +133,8 @@ class News with ChangeNotifier {
       if (extractedData == null) {
         return;
       }
+      // final asas = await http.read(Uri.parse('https://firebasestorage.googleapis.com/v0/b/project-diva-df56a.appspot.com/o/news%2FQAQ_Project.md?alt=media&token=bf699081-064f-4a1e-aa7e-5a2f8d7e0945'));
+      // print(asas);
       final List<SingleNewsItem> loadedNews = [];
       extractedData.forEach((newsID, newsData) {
         // print(newsData);
@@ -144,16 +146,7 @@ class News with ChangeNotifier {
           views: newsData['views'],
           tags: List.from(newsData['tags']),
           thumbnailImageUrl: newsData['thumbnailImageUrl'],
-          article_1: newsData['article_1'],
-          img_1: newsData['img_1'],
-          article_2: newsData['article_2'],
-          img_2: newsData['img_2'],
-          article_3: newsData['article_3'],
-          img_3: newsData['img_3'],
-          article_4: newsData['article_4'],
-          img_4: newsData['img_4'],
-          article_5: newsData['article_5'],
-          img_5: newsData['img_5'],
+          markdownData: newsData['markdownData']
         ));
       });
       _news = loadedNews;

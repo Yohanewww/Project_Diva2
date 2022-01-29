@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:project_diva2/Main_providers/auth.dart';
+import '../auth.screen.dart';
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,12 @@ class Profile extends StatelessWidget {
                     height: mediaQuery.size.width * (6 / 16),
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Image.network(
-                          'https://cdn.discordapp.com/attachments/888315437769699328/930858997840486410/849291.jpg'),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(AuthScreen.routeName);
+                        },
+                        child : Image.network('https://cdn.discordapp.com/attachments/888315437769699328/930858997840486410/849291.jpg'),
+                      )
                     ),
                   ),
                   Container(

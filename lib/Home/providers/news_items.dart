@@ -14,6 +14,7 @@ class NewsItems extends StatelessWidget {
     String _views = single_news.views.toString();
     String _likes = single_news.likes.toString();
     String _description = single_news.description;
+    String markdownData = single_news.markdownData;
     List<String> _tags = single_news.tags;
     //  tag 还没设置
     
