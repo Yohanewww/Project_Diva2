@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:project_diva2/Main_providers/auth.dart';
 import '../auth.screen.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+
+    _launchUrl(String _url) async {
+      final url = _url;
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
+
+    ;
 
     return Scaffold(
       // appBar: AppBar(
@@ -96,8 +109,8 @@ class Profile extends StatelessWidget {
                       width: 30,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left:10),
-                      child: Column(    
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Hakuya Furo000000'),
@@ -118,20 +131,7 @@ class Profile extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 children: [
-                  SizedBox(height:30),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: mediaQuery.size.width * 25 / 100,
-                      vertical: 2,
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.bug_report_rounded),
-                        SizedBox(width: 10),
-                        Text('Bug'),
-                      ],
-                    ),
-                  ),
+                  SizedBox(height: 30),
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: mediaQuery.size.width * 25 / 100,
@@ -150,12 +150,16 @@ class Profile extends StatelessWidget {
                       horizontal: mediaQuery.size.width * 25 / 100,
                       vertical: 2,
                     ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.headset_mic_rounded),
-                        SizedBox(width: 10),
-                        Text('客服'),
-                      ],
+                    child: TextButton(
+                      onPressed: () =>
+                          _launchUrl('https://forms.gle/gqVxiviCXuFTDHi69'),
+                      child: Row(
+                        children: [
+                          Icon(Icons.headset_mic_rounded),
+                          SizedBox(width: 10),
+                          Text('客服'),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
