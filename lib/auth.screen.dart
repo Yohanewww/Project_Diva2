@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import '../models/http_exception.dart';
+import './Main_providers/auth.dart';
 
 enum AuthMode { Signup, Login }
 
@@ -58,7 +59,7 @@ class AuthScreen extends StatelessWidget {
                         ],
                       ),
                       child: Text(
-                        'MyShop',
+                        'Hako no Jigen',
                         style: TextStyle(
                           color: Colors.amber,
                           fontSize: 50,
@@ -129,16 +130,17 @@ class _AuthCardState extends State<AuthCard> {
     try {
       if (_authMode == AuthMode.Login) {
         // Log user in
-        // await Provider.of<Auth>(context, listen: false).login(
-        //   _authData['email'],
-        //   _authData['password'],
-        // );
+        await Provider.of<Auth>(context, listen: false).Login(
+          _authData['email'],
+          _authData['password'],
+        );
       } else {
         // Sign user up
-        // await Provider.of<Auth>(context, listen: false).signup(
-        //   _authData['email'],
-        //   _authData['password'],
-        // );
+
+      await Provider.of<Auth>(context, listen: false).SignUp(
+          _authData['email'],
+          _authData['password'],
+        );
       }
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';
