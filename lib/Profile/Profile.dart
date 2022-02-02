@@ -55,12 +55,15 @@ class Profile extends StatelessWidget {
                             horizontal: mediaQuery.size.width * 25 / 100,
                             vertical: 5,
                           ),
-                          child: Row(
-                            children: [
-                              Icon(Icons.mail),
-                              SizedBox(width: 10),
-                              Text('消息通知'),
-                            ],
+                          child: TextButton(
+                            onPressed: () => {},
+                            child: Row(
+                              children: [
+                                Icon(Icons.mail),
+                                SizedBox(width: 10),
+                                Text('消息通知'),
+                              ],
+                            ),
                           ),
                         ),
                         Padding(
@@ -68,12 +71,15 @@ class Profile extends StatelessWidget {
                             horizontal: mediaQuery.size.width * 25 / 100,
                             vertical: 2,
                           ),
-                          child: Row(
-                            children: [
-                              Icon(Icons.access_time),
-                              SizedBox(width: 10),
-                              Text('游览历史'),
-                            ],
+                          child: TextButton(
+                            onPressed: () => {},
+                            child: Row(
+                              children: [
+                                Icon(Icons.access_time),
+                                SizedBox(width: 10),
+                                Text('游览历史'),
+                              ],
+                            ),
                           ),
                         ),
                         // SizedBox(height:15)
@@ -131,12 +137,15 @@ class Profile extends StatelessWidget {
                       horizontal: mediaQuery.size.width * 25 / 100,
                       vertical: 2,
                     ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.list_alt_rounded),
-                        SizedBox(width: 10),
-                        Text('问卷'),
-                      ],
+                    child: TextButton(
+                      onPressed: () => {},
+                      child: Row(
+                        children: [
+                          Icon(Icons.list_alt_rounded),
+                          SizedBox(width: 10),
+                          Text('问卷'),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -161,12 +170,15 @@ class Profile extends StatelessWidget {
                       horizontal: mediaQuery.size.width * 25 / 100,
                       vertical: 2,
                     ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.system_update_alt_rounded),
-                        SizedBox(width: 10),
-                        Text('更新'),
-                      ],
+                    child: TextButton(
+                      onPressed: () => {},
+                      child: Row(
+                        children: [
+                          Icon(Icons.system_update_alt_rounded),
+                          SizedBox(width: 10),
+                          Text('更新'),
+                        ],
+                      ),
                     ),
                   ),
                 ],
