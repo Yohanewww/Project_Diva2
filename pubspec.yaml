@@ -25,7 +25,8 @@ dependencies:
     sdk: flutter
  
   flutter_swiper_null_safety: ^1.0.2
-
+  flutter_markdown: ^0.6.9
+  download_assets: ^3.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -58,6 +59,7 @@ flutter:
   assets:
     - assets/images/furo.png
     - assets/images/qrscan.png
+    - assets/news_assets/News.md
  
 
   #  An image asset can refer to one or more resolution-specific "variants", see

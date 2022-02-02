@@ -1,16 +1,48 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
 
 import '../../fonts.dart';
 import '../providers/news.dart';
+import 'package:download_assets/download_assets.dart';
 
-class NewsDetailScreen extends StatelessWidget {
+class NewsDetailScreen extends StatefulWidget {
+  NewsDetailScreen({Key? key}) : super(key: key);
   static const routeName = '/news-detail-screen';
 
+  
   @override
-  Widget build(BuildContext context) {
-    final newsId = ModalRoute.of(context)?.settings.arguments as String;
-    final loadedNews = Provider.of<News>(context, listen: false).findById(newsId);
+  State<NewsDetailScreen> createState() => _NewsDetailScreenState();
+}
+
+class _NewsDetailScreenState extends State<NewsDetailScreen> {
+ 
+  @override
+    void initState() {
+      // Future.delayed(Duration.zero).then((_) {
+      //   Provider.of<News>(context, listen: false).fetchNews();
+      // });
+      // print('sasadasda');
+      super.initState();
+    }
+
+    @override
+    void didChangeDependencies() {  
+      super.didChangeDependencies();
+    }
+    @override
+    Widget build(BuildContext context) {
+      
+      Codec<String, String> stringToBase64 = utf8.fuse(base64);
+      final newsId = ModalRoute.of(context)?.settings.arguments as String;
+      final loadedNews = Provider.of<News>(context, listen: false).findById(newsId);
+      // final response = http.read(Uri.parse(loadedNews.markdownUrl));
+      // final extractedData = json.decode(response.body);
+      final markdownData = stringToBase64.decode(loadedNews.markdownData);
+
+   
     return Scaffold(
       appBar: AppBar(
         title: Text(loadedNews.title),
@@ -48,22 +80,17 @@ class NewsDetailScreen extends StatelessWidget {
               ),
             ),
             Container(
-              height: 400,
-              child: Center(
-                child: Text(
-                  loadedNews.description,
-                  style: TextStyles.body,
-                ),
-              ),
-            ),
-            Container(
-              child: Text(loadedNews.article_1 ?? ''),
-            ),
-
-
+              padding: EdgeInsets.all(5),
+              child: MarkdownBody(data: markdownData,),
+            )
+          
           ],
         ),
       ),
+      
     );
+  
+  
+
   }
 }

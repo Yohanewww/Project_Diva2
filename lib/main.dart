@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import './Main_providers/auth.dart';
 
 import 'main_screen.dart';
-import './Home/screens/news_detail_screen.dart';
-
+import 'Home/screens/news_detail_screen.dart';
+import 'auth.screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
           //测试用  "new_page": (context) => NewRoute(),
           "/": (context) => Nav(),
           NewsDetailScreen.routeName: (context) => NewsDetailScreen(),
+          AuthScreen.routeName: (context) => AuthScreen(),
         },
       ),
     );
