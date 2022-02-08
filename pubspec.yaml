@@ -23,13 +23,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+ 
   flutter_swiper_null_safety: ^1.0.2
-
+  flutter_markdown: ^0.6.9
+  download_assets: ^3.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  provider: ^6.0.2
+  flutter_switch: ^0.3.2
+  http: ^0.13.4
+  url_launcher: ^6.0.18
   
 
 dev_dependencies:
@@ -54,6 +59,7 @@ flutter:
   assets:
     - assets/images/furo.png
     - assets/images/qrscan.png
+    - assets/news_assets/News.md
  
 
   #  An image asset can refer to one or more resolution-specific "variants", see
@@ -67,12 +73,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: ProximaNova
+      fonts:
+        - asset: assets/fonts/ProximaNova-Regular.otf
+        - asset: assets/fonts/ProximaNova-Bold.otf
+          weight: 700
+    - family:  CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

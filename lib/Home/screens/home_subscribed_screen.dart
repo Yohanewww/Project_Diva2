@@ -24,7 +24,7 @@ class _HomeSubscribeState extends State<HomeSubscribe>
     super.dispose();
   }
 
-  @override
+
   Widget _swiperBuilder(BuildContext context, int index) {
     var images = [
       'https://i0.hdslb.com/bfs/archive/2bcdd16080a1b741fb18ea9e2b2edb942f236389.jpg',

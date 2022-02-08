@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
-import 'package:project_diva2/Home/HomeAppbar.dart';
 
 // Home_body
-import 'package:project_diva2/Home/Home_body/HomeLatest.dart';
-import 'package:project_diva2/Home/Home_body/HomeSubscribe.dart';
-import 'package:project_diva2/Home/Home_body/HomeHot.dart';
+import './screens/home_hot_screen.dart';
+import './screens/home_latest_screen.dart';
+import './screens/home_subscribed_screen.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
-
+  
   @override
   _HomeState createState() => _HomeState();
 }
@@ -34,7 +33,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   // sub_appbar
   @override
   Widget build(BuildContext context) {
-    var appbarbottomtabs = [];
 
     // sub_appbar 入口
     var homebodys = [
@@ -51,17 +49,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 0,
-        title: HomeAppBar(),
-        // Tab 本体
-        bottom: PreferredSize(
-          preferredSize: Size(double.infinity, 30),
-          child: TabBar(
+      appBar:  TabBar(
             indicatorSize: TabBarIndicatorSize.label,
-            indicatorColor: Colors.amber,
-            labelColor: Colors.amber,
-            unselectedLabelColor: Colors.black,
+            indicatorColor: Colors.black,
+            labelColor: Colors.black,
+            unselectedLabelColor: Colors.grey[700],
             tabs: <Widget>[
               Container(
                   height: 30,
@@ -81,8 +73,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ],
             controller: _tabController,
           ),
-        ),
-      ),
+ 
       body: bodys[_currentIndex],
     );
   }
