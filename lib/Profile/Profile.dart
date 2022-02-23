@@ -46,7 +46,7 @@ class Profile extends StatelessWidget {
                   ),
                   Container(
                     width: double.infinity,
-                    height: 150,
+                    height: 185,
                     color: Colors.white,
                     child: Column(
                       children: [
