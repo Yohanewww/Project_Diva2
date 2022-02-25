@@ -50,14 +50,19 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // Container(
+            //   height: 221,
+            //   child: Image.network(
+            //       loadedNews.thumbnailImageUrl),
+            // ),
+            // Text(
+            //   loadedNews.title,
+            //   style: TextStyles.title),
+            
             Container(
-              height: 221,
-              child: Image.network(
-                  loadedNews.thumbnailImageUrl),
+              padding: EdgeInsets.all(5),
+              child: MarkdownBody(data: markdownData,),
             ),
-            Text(
-              loadedNews.title,
-              style: TextStyles.title),
             Container(
               height: 30,
               child: Row(
@@ -79,10 +84,6 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                 ],
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(5),
-              child: MarkdownBody(data: markdownData,),
-            )
           
           ],
         ),
