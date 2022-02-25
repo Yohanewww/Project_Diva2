@@ -55,7 +55,7 @@ class _HomeHotState extends State<HomeHot> with SingleTickerProviderStateMixin {
             children: <Widget>[
               Container(
                 height: 150.0,
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.symmetric(vertical: 5.0),
                 alignment: Alignment(0, 0),
                 child: Swiper(
                     layout: SwiperLayout.DEFAULT,

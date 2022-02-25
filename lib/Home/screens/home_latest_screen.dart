@@ -81,7 +81,7 @@ class _HomeLatestState extends State<HomeLatest>
               children: <Widget>[
                 Container(
                   height: 150.0,
-                  padding: EdgeInsets.only(bottom: 5.0),
+                  padding: EdgeInsets.symmetric(vertical: 5.0),
                   alignment: Alignment(0, 0),
                   child: Swiper(
                     layout: SwiperLayout.DEFAULT,
