@@ -50,66 +50,85 @@ class _ArtDrawingState extends State<ArtDrawing> {
 
   @override
   Widget build(BuildContext context) {
-    // return SlidingUpPanel(
-    //   panelBuilder: (ScrollController sc) => _scrollingList(sc),
-    //   // minHeight: 500,
-    //   body: Container(
-    //     // height: 150.0,
-    //     padding: EdgeInsets.symmetric(vertical: 5.0),
-    //     alignment: Alignment.topCenter,
-    //     child: Text(
-    //       "Ranking",
-    //     ),
-    //   ),
-    // );
-
-    return ListView.builder(
-      scrollDirection: Axis.vertical,
-      itemCount: 2,
-      itemBuilder: (context, i) {
-        return i == 0
-            ? Column(
-                children: <Widget>[
-                  Container(
-                    height: 150.0,
-                    padding: EdgeInsets.symmetric(vertical: 5.0),
-                    alignment: Alignment(0, 0),
-                    child: Text(
-                      "Ranking",
-                    ),
-                  ),
-                ],
-              )
-            : Container(
-                width: double.infinity,
-                height: 550,
-                child: MasonryGridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 0,
-                  crossAxisSpacing: 0,
-                  itemBuilder: (context, index) {
-                    return DrawingGridItem(dummyImageList[index]);
-                  },
-                ),
-              );
-      },
+    return SlidingUpPanel(
+      panelBuilder: (ScrollController sc) => _scrollingList(sc),
+      minHeight: 500,
+      maxHeight: 1200,
+      body: Container(
+        // height: 150.0,
+        padding: EdgeInsets.symmetric(vertical: 5.0),
+        alignment: Alignment.topCenter,
+        child: Text(
+          "Ranking",
+        ),
+      ),
     );
+
+    // return ListView.builder(
+    //   scrollDirection: Axis.vertical,
+    //   itemCount: 2,
+    //   itemBuilder: (context, i) {
+    //     return i == 0
+    //         ? Column(
+    //             children: <Widget>[
+    //               Container(
+    //                 height: 150.0,
+    //                 padding: EdgeInsets.symmetric(vertical: 5.0),
+    //                 alignment: Alignment(0, 0),
+    //                 child: Text(
+    //                   "Ranking",
+    //                 ),
+    //               ),
+    //             ],
+    //           )
+    //         : Container(
+    //             width: double.infinity,
+    //             height: 550,
+    //             child: MasonryGridView.count(
+    //               crossAxisCount: 2,
+    //               mainAxisSpacing: 0,
+    //               crossAxisSpacing: 0,
+    //               itemBuilder: (context, index) {
+    //                 return DrawingGridItem(dummyImageList[index]);
+    //               },
+    //             ),
+    //           );
+    //   },
+    // );
   }
 
-  // Widget _scrollingList(ScrollController sc) {
-  //   return ListView.builder(
-  //     controller: sc,
-  //     itemCount: dummyImageList.length,
-  //     itemBuilder: (BuildContext context, int i) {
-  //       return MasonryGridView.count(
-  //         crossAxisCount: 2,
-  //         mainAxisSpacing: 0,
-  //         crossAxisSpacing: 0,
-  //         itemBuilder: (context, index) {
-  //           return DrawingGridItem(dummyImageList[index]);
-  //         },
-  //       );
-  //     },
-  //   );
-  // }
+  Widget _scrollingList(ScrollController sc) {
+    return Container(
+      child: MasonryGridView.count(
+        controller: sc,
+        crossAxisCount: 2,
+        mainAxisSpacing: 0,
+        crossAxisSpacing: 0,
+        itemBuilder: (context, index) {
+          return DrawingGridItem(dummyImageList[index]);
+        },
+      ),
+    );
+  }
 }
+
+// Widget _scrollingList(ScrollController sc) {
+//   return Container(
+//     decoration: BoxDecoration(
+//       borderRadius: BorderRadius.only(
+//         topLeft: Radius.circular(24.0),
+//         topRight: Radius.circular(24.0),
+//       ),
+//     ),
+//     child: ListView.builder(
+//       controller: sc,
+//       itemCount: 50,
+//       itemBuilder: (BuildContext context, int i) {
+//         return Container(
+//           padding: const EdgeInsets.all(12.0),
+//           child: Text("$i"),
+//         );
+//       },
+//     ),
+//   );
+// }
