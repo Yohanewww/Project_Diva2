@@ -6,6 +6,8 @@ import './Main_providers/auth.dart';
 import 'main_screen.dart';
 import 'Home/screens/news_detail_screen.dart';
 import 'auth.screen.dart';
+import './Art/screens/art_product_screen.dart';
+import './Art/screens/artist_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,6 +41,8 @@ class MyApp extends StatelessWidget {
           "/": (context) => Nav(),
           NewsDetailScreen.routeName: (context) => NewsDetailScreen(),
           AuthScreen.routeName: (context) => AuthScreen(),
+          ArtProductScreen.routeName:(context) =>ArtProductScreen(),
+          ArtistScreen.routeName:(context) =>ArtistScreen(),
         },
       ),
     );

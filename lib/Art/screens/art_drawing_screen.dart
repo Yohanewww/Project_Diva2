@@ -1,9 +1,12 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../widgets/drawing_grid_item.dart';
+import 'art_product_screen.dart';
 
 class ArtDrawing extends StatefulWidget {
   ArtDrawing({Key? key}) : super(key: key);
@@ -105,7 +108,10 @@ class _ArtDrawingState extends State<ArtDrawing> {
         mainAxisSpacing: 0,
         crossAxisSpacing: 0,
         itemBuilder: (context, index) {
-          return DrawingGridItem(dummyImageList[index]);
+          return GestureDetector(
+              onTap: () =>
+                  Navigator.of(context).pushNamed(ArtProductScreen.routeName),
+              child: DrawingGridItem(dummyImageList[index]));
         },
       ),
     );
