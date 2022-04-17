@@ -29,28 +29,6 @@ class _ArtDrawingState extends State<ArtDrawing> {
     "https://cdn.discordapp.com/attachments/888315437769699328/957604073237004358/saekano.jpg",
   ];
 
-  // with SingleTickerProviderStateMixin {
-  // Widget sasas(BuildContext context, int index) {
-  //   var images = [
-  //     'https://i0.hdslb.com/bfs/archive/2bcdd16080a1b741fb18ea9e2b2edb942f236389.jpg',
-  //     "https://i0.hdslb.com/bfs/archive/5dea26a8ef8d5410b3e2e9861638bf46eeb70569.jpg",
-  //     "https://i0.hdslb.com/bfs/archive/4cf45546da8f6a04321019c7ae83bcc3d1a8259e.jpg",
-  //     "https://i0.hdslb.com/bfs/archive/a4758eac761305040574be94e4909d4b6414e612.jpg",
-  //     "https://i0.hdslb.com/bfs/archive/1d5cd0e2ac820f68db273f5d53168a429fa83182.jpg",
-  //   ];
-
-  //   return (Container(
-  //     child: ClipRRect(
-  //       child: Image.network(
-  //         images[index],
-  //         height: 150.0,
-  //         scale: 0.1,
-  //         fit: BoxFit.cover,
-  //       ),
-  //     ),
-  //   ));
-  // }
-
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
@@ -66,38 +44,6 @@ class _ArtDrawingState extends State<ArtDrawing> {
         ),
       ),
     );
-
-    // return ListView.builder(
-    //   scrollDirection: Axis.vertical,
-    //   itemCount: 2,
-    //   itemBuilder: (context, i) {
-    //     return i == 0
-    //         ? Column(
-    //             children: <Widget>[
-    //               Container(
-    //                 height: 150.0,
-    //                 padding: EdgeInsets.symmetric(vertical: 5.0),
-    //                 alignment: Alignment(0, 0),
-    //                 child: Text(
-    //                   "Ranking",
-    //                 ),
-    //               ),
-    //             ],
-    //           )
-    //         : Container(
-    //             width: double.infinity,
-    //             height: 550,
-    //             child: MasonryGridView.count(
-    //               crossAxisCount: 2,
-    //               mainAxisSpacing: 0,
-    //               crossAxisSpacing: 0,
-    //               itemBuilder: (context, index) {
-    //                 return DrawingGridItem(dummyImageList[index]);
-    //               },
-    //             ),
-    //           );
-    //   },
-    // );
   }
 
   Widget _scrollingList(ScrollController sc) {
@@ -117,24 +63,3 @@ class _ArtDrawingState extends State<ArtDrawing> {
     );
   }
 }
-
-// Widget _scrollingList(ScrollController sc) {
-//   return Container(
-//     decoration: BoxDecoration(
-//       borderRadius: BorderRadius.only(
-//         topLeft: Radius.circular(24.0),
-//         topRight: Radius.circular(24.0),
-//       ),
-//     ),
-//     child: ListView.builder(
-//       controller: sc,
-//       itemCount: 50,
-//       itemBuilder: (BuildContext context, int i) {
-//         return Container(
-//           padding: const EdgeInsets.all(12.0),
-//           child: Text("$i"),
-//         );
-//       },
-//     ),
-//   );
-// }

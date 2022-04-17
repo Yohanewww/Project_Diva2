@@ -42,59 +42,63 @@ class _NavState extends State<Nav> {
       key: _drawerkey,
       drawer: SidebarDrawerWidget(),
       appBar: AppBar(
-          
         leading: Builder(builder: (BuildContext context) {
-            return TextButton(
-                onPressed: () {
-                  _drawerkey.currentState!.openDrawer();
-                },
-                child: ClipOval(
-                  child: Image.network(
-                    "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-                    width: 35.0,
-                    height: 35.0,
-                  ),
-                ));
-          }),
-          primary: true,
-          title: Row(
-            children: <Widget>[
-              // Image.asset("assets/images/furo.png"),
-              // new GestureDetector(
-              //   onTap: () {},
-              //   child: ClipOval(
-              //     child: Image.network(
-              //       "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
-              //       width: 35.0,
-              //       height: 35.0,
-              //     ),
-              //   ),
-              // ),
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.only(left: 0.0, right: 10.0),
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 10),
-                  width: 200.0,
-                  height: 30.0,
-                  child: Icon(Icons.search, color: Colors.white54),
-                  decoration: BoxDecoration(
-                      color: Colors.white30,
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
+          return TextButton(
+              onPressed: () {
+                _drawerkey.currentState!.openDrawer();
+              },
+              child: ClipOval(
+                child: Image.network(
+                  "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+                  width: 35.0,
+                  height: 35.0,
                 ),
+              ));
+        }),
+        primary: true,
+        title: Row(
+          children: <Widget>[
+            // Image.asset("assets/images/furo.png"),
+            // new GestureDetector(
+            //   onTap: () {},
+            //   child: ClipOval(
+            //     child: Image.network(
+            //       "https://cdn.discordapp.com/emojis/771350520954617877.webp?size=96&quality=lossless",
+            //       width: 35.0,
+            //       height: 35.0,
+            //     ),
+            //   ),
+            // ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(left: 0.0, right: 10.0),
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(left: 10),
+                width: 200.0,
+                height: 30.0,
+                child: Icon(Icons.search, color: Colors.white54),
+                decoration: BoxDecoration(
+                    color: Colors.white30,
+                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
               ),
-              Container(
-                width: 40,
-                child: Image.asset(
-                  "assets/images/qrscan.png",
-                  width: 25.0,
-                  height: 25.0,
-                  color: Colors.white70,
-                ),
-              )
-            ],
-          ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.shopping_cart_outlined),
+              iconSize: 30.0,
+            ),
+            // Container(
+            //   width: 40,
+            //   child: Image.asset(
+            //     "assets/images/qrscan.png",
+            //     width: 25.0,
+            //     height: 25.0,
+            //     color: Colors.white70,
+            //   ),
+            // ),
+          ],
         ),
+      ),
       body: this._listPageData[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
