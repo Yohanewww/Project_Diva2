@@ -49,6 +49,7 @@ class _ArtDrawingState extends State<ArtDrawing> {
   Widget _scrollingList(ScrollController sc) {
     return Container(
       child: MasonryGridView.count(
+        itemCount: dummyImageList.length,
         controller: sc,
         crossAxisCount: 2,
         mainAxisSpacing: 0,
@@ -58,7 +59,7 @@ class _ArtDrawingState extends State<ArtDrawing> {
               onTap: () =>
                   Navigator.of(context).pushNamed(ArtProductScreen.routeName),
               child: DrawingGridItem(dummyImageList[index]));
-        },
+        }, 
       ),
     );
   }
