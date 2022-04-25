@@ -8,6 +8,7 @@ import 'Home/screens/news_detail_screen.dart';
 import 'auth.screen.dart';
 import './Art/screens/art_product_screen.dart';
 import './Art/screens/artist_screen.dart';
+import './cart_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Auth(),
         ),
-        ChangeNotifierProvider(create:(_)=> News()),
+        ChangeNotifierProvider(create: (_) => News()),
         Provider.value(value: appTheme),
       ],
 
@@ -41,8 +42,9 @@ class MyApp extends StatelessWidget {
           "/": (context) => Nav(),
           NewsDetailScreen.routeName: (context) => NewsDetailScreen(),
           AuthScreen.routeName: (context) => AuthScreen(),
-          ArtProductScreen.routeName:(context) =>ArtProductScreen(),
-          ArtistScreen.routeName:(context) =>ArtistScreen(),
+          ArtProductScreen.routeName: (context) => ArtProductScreen(),
+          ArtistScreen.routeName: (context) => ArtistScreen(),
+          CartScreen.routeName: (context) => CartScreen(),
         },
       ),
     );

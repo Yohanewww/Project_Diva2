@@ -6,6 +6,7 @@ import 'package:project_diva2/Journey/Journey.dart';
 import 'package:project_diva2/Home/home.dart';
 import 'package:project_diva2/Luckydraw/Luckydraw.dart';
 import 'package:project_diva2/Profile/Profile.dart';
+import './cart_screen.dart';
 
 import 'widget/sidebar_drawer.dart';
 
@@ -83,7 +84,8 @@ class _NavState extends State<Nav> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(CartScreen.routeName),
               icon: Icon(Icons.shopping_cart_outlined),
               iconSize: 30.0,
             ),
