@@ -16,7 +16,7 @@ class ArtDrawing extends StatefulWidget {
 }
 
 class _ArtDrawingState extends State<ArtDrawing> {
-  final List dummyImageList = [
+  final List _dummyImageList = [
     "https://cdn.discordapp.com/attachments/888315437769699328/957604071244726272/276128710_348998350571397_4790983634473326833_n.jpg",
     "https://cdn.discordapp.com/attachments/888315437769699328/957604071475400704/276056323_2086806141489450_3173406138727740064_n.jpg",
     "https://cdn.discordapp.com/attachments/888315437769699328/957604071664123984/E0Faya1VEAQEej8.jpg",
@@ -49,7 +49,7 @@ class _ArtDrawingState extends State<ArtDrawing> {
   Widget _scrollingList(ScrollController sc) {
     return Container(
       child: MasonryGridView.count(
-        itemCount: dummyImageList.length,
+        itemCount: _dummyImageList.length,
         controller: sc,
         crossAxisCount: 2,
         mainAxisSpacing: 0,
@@ -58,7 +58,7 @@ class _ArtDrawingState extends State<ArtDrawing> {
           return GestureDetector(
               onTap: () =>
                   Navigator.of(context).pushNamed(ArtProductScreen.routeName),
-              child: DrawingGridItem(dummyImageList[index]));
+              child: DrawingGridItem(_dummyImageList[index]));
         }, 
       ),
     );

@@ -1,41 +1,89 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
+import '../widgets/drawing_grid_item.dart';
+import './art_product_screen.dart';
 
 class ArtistScreen extends StatelessWidget {
-  const ArtistScreen({Key? key}) : super(key: key);
+  ArtistScreen({Key? key}) : super(key: key);
   static const routeName = '/artist-screen';
+
+  final List _dummyImageList = [
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604071244726272/276128710_348998350571397_4790983634473326833_n.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604071475400704/276056323_2086806141489450_3173406138727740064_n.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604071664123984/E0Faya1VEAQEej8.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604071869653073/ddsadl7-adbe7dab-a194-4e7c-9f30-2234a07dae1c.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604072108752947/274035612_4930040887072659_92515293170683800_n.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604072322646067/257444016_4200280220076795_3225119500223436899_n.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604072565899284/261676223_5259013830781677_4134081543391715767_n.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604072779817000/254616891_366870078566149_7893042624021925470_n.png",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604073002131496/FC4JYquVEAAVDMn.jpg",
+    "https://cdn.discordapp.com/attachments/888315437769699328/957604073237004358/saekano.jpg",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Artist Store'),
+        title: Text('Store'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: 150,
-                  width: double.infinity,
-                  decoration: BoxDecoration(color: Colors.amber),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 25, horizontal: 55),
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(color: Colors.blueAccent),
-                )
-              ],
-            ),
-            Container(
-              height: 50,
-              width: double.infinity,
-              decoration: BoxDecoration(color: Colors.red),
-            ),
-          ],
+      body: SlidingUpPanel(
+        panelBuilder: (ScrollController sc) => _scrollingList(sc),
+        minHeight: 500,
+        maxHeight: 1200,
+        body: Container(
+          // height: 150.0,
+          padding: EdgeInsets.symmetric(vertical: 5.0),
+          alignment: Alignment.topCenter,
+          child: Stack(
+            children: [
+              Image.network(
+                  'https://cdn.discordapp.com/attachments/888315437769699328/957604073002131496/FC4JYquVEAAVDMn.jpg'),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Image.network(
+                        'https://cdn.discordapp.com/attachments/888315437769699328/963760431393026068/4444.jpg',
+                        height: 50,
+                      ),
+                      SizedBox(width: 10),
+                      Text('Author Name'),
+                      Expanded(child: Container()),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushNamed(ArtistScreen.routeName);
+                        },
+                        child: Text('Follow'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _scrollingList(ScrollController sc) {
+    return Container(
+      child: MasonryGridView.count(
+        itemCount: _dummyImageList.length,
+        controller: sc,
+        crossAxisCount: 2,
+        mainAxisSpacing: 0,
+        crossAxisSpacing: 0,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+              onTap: () =>
+                  Navigator.of(context).pushNamed(ArtProductScreen.routeName),
+              child: DrawingGridItem(_dummyImageList[index]));
+        },
       ),
     );
   }
